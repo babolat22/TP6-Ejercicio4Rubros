@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ListadoNombreView extends javax.swing.JInternalFrame {
 private ProductoData pd= new ProductoData();    
-private DefaultTableModel modelo= new DefaultTableModel(){
+   private DefaultTableModel modelo= new DefaultTableModel(){
     public boolean isCellEditable(int fila,int col){
        return false;
     }
@@ -32,9 +32,9 @@ private DefaultTableModel modelo= new DefaultTableModel(){
         armarCabecera();
     }
     
-    public void redimensionarImagen(){
+    private void redimensionarImagen(){
         ImageIcon img= new ImageIcon(getClass().getResource("/Imagenes/busqueda.gif"));
-        Icon gif = new ImageIcon(img.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+        Icon gif = new ImageIcon(img.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
         lblLupa.setIcon(gif);
     }
     
@@ -45,9 +45,9 @@ private DefaultTableModel modelo= new DefaultTableModel(){
     }
      private void armarCabecera(){
         modelo.addColumn("Codigo");
-        modelo.addColumn("Descriocion");
-        modelo.addColumn("Categoria");
+        modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
+        modelo.addColumn("Categoria");
         modelo.addColumn("Stock");
         tProductos.setModel(modelo);
     
@@ -76,6 +76,12 @@ private DefaultTableModel modelo= new DefaultTableModel(){
         tProductos = new javax.swing.JTable();
         tDesc = new javax.swing.JTextField();
         lblLupa = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Listado por Nombre");
@@ -123,7 +129,7 @@ private DefaultTableModel modelo= new DefaultTableModel(){
                                     .addComponent(tDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblLupa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -135,7 +141,7 @@ private DefaultTableModel modelo= new DefaultTableModel(){
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLupa, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)

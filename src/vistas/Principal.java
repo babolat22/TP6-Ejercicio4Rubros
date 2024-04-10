@@ -162,9 +162,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
+        
         ListadoNombreView pw=new ListadoNombreView();
-        pw.setVisible(true);
         escritorio.add(pw);
+        pw.setVisible(true);
+        
         escritorio.moveToFront(pw);
     }//GEN-LAST:event_miNombreActionPerformed
 

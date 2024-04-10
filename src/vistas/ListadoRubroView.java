@@ -36,9 +36,9 @@ public class ListadoRubroView extends javax.swing.JInternalFrame {
     
     private void armarCabecera(){
         modelo.addColumn("Codigo");
-        modelo.addColumn("Descriocion");
-        modelo.addColumn("Categoria");
+        modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
+        modelo.addColumn("Categoria");
         modelo.addColumn("Stock");
         tProductos.setModel(modelo);
     
